@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CitiesComponent } from './cities/cities.component';
+import { EditCityComponent } from './cities/edit-city/edit-city.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DivisionsComponent } from './divisions/divisions.component';
+import { EditDivisionComponent } from './divisions/edit-division/edit-division.component';
 import { MatchesComponent } from './matches/matches.component';
 import { PlayersComponent } from './players/players.component';
 import { PositionsComponent } from './positions/positions.component';
@@ -18,8 +20,16 @@ const routes: Routes = [
         component: CitiesComponent,
       },
       {
+        path: 'cities/edit/:id',
+        component: EditCityComponent,
+      },
+      {
         path: 'divisions',
         component: DivisionsComponent,
+      },
+      {
+        path: 'divisions/edit/:id',
+        component: EditDivisionComponent,
       },
       {
         path: 'players',

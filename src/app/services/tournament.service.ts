@@ -16,7 +16,11 @@ export class TournamentService {
     return this.http.get<any>(`http://localhost:8000/api/cities/`);
   }
 
-  createCity(description: string): Observable<any> {
+  getCityById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/cities/${id}/`);
+  }
+
+  createCity(description: any): Observable<any> {
     return this.http.post<any>(
       `http://localhost:8000/api/cities/add/`,
       description
@@ -32,6 +36,34 @@ export class TournamentService {
   updateCity(id: number, description: string): Observable<any> {
     return this.http.put<any>(
       `http://localhost:8000/api/cities/update/${id}/`,
+      description
+    );
+  }
+
+  getDivisions(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/divisions/`);
+  }
+
+  getDivisionById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/divisions/${id}/`);
+  }
+
+  createDivision(description: any): Observable<any> {
+    return this.http.post<any>(
+      `http://localhost:8000/api/divisions/add/`,
+      description
+    );
+  }
+
+  deleteDivision(id: number): Observable<any> {
+    return this.http.delete<any>(
+      `http://localhost:8000/api/divisions/delete/${id}/`
+    );
+  }
+
+  updateDivision(id: number, description: string): Observable<any> {
+    return this.http.put<any>(
+      `http://localhost:8000/api/divisions/update/${id}/`,
       description
     );
   }

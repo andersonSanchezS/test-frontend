@@ -1,0 +1,36 @@
+<section class="main-container">
+  <section class="header-title">
+    <h2 class="header-title__text">
+      Editando la division : <strong> {{ divisionName }} </strong>
+    </h2>
+
+    <button (click)="deleteDivision()" class="header-title__button">
+      Delete
+    </button>
+  </section>
+</section>
+
+<section class="product-container">
+  <h3 class="title-description">Division Information</h3>
+
+  <form [formGroup]="updateDivisionForm" (ngSubmit)="updateDivision()">
+    <div class="product-info">
+      <div class="product-info__form">
+        <div class="product-info__form-grid">
+          <div class="user-input-wrap">
+            <input formControlName="description" type="text" required />
+            <label class="floating-placeholder">Division</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-buttons">
+      <button type="submit" class="product-buttons__btn btn-save">
+        save
+      </button>
+      <button type="button" (click)="onBack()" class="product-buttons__btn">
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>
