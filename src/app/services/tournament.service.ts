@@ -93,4 +93,12 @@ export class TournamentService {
       body
     );
   }
+
+  getMatches(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/matches/`);
+  }
+
+  createMatch(body: any): Observable<any> {
+    return this.http.post<any>(`http://localhost:8000/api/matches/add/`, body);
+  }
 }

@@ -13,6 +13,11 @@ import { AddTeamComponent } from './add-team/add-team.component';
 export class TeamsComponent implements OnInit {
   public columns = [
     {
+      columnDef: 'id',
+      header: 'id',
+      cell: (team: ITeam) => `${team.id}`,
+    },
+    {
       columnDef: 'name',
       header: 'Nombre',
       cell: (team: ITeam) => `${team.name}`,

@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>
+  <span> Add a new Match </span>
+</h2>
+
+<form [formGroup]="createMatchForm">
+  <mat-dialog-content>
+    <div class="input-box">
+      <h3 class="input-box__title">Match Information</h3>
+
+      <div class="user-input-wrap">
+        <input formControlName="team1_score" type="number" required />
+        <label class="floating-placeholder"> local score </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="team2_score" type="number" required />
+        <label class="floating-placeholder"> visitor score </label>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Local</mat-label>
+        <mat-select  formControlName="team1">
+          <mat-option *ngFor="let team of teams" [value]="team.id">
+            {{team.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Visitor</mat-label>
+        <mat-select  formControlName="team2">
+          <mat-option *ngFor="let team of teams" [value]="team.id">
+            {{team.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cerrar</button>
+    <button mat-raised-button (click)="createMatch()" color="primary">
+      Guardar
+    </button>
+  </mat-dialog-actions>
+</form>
