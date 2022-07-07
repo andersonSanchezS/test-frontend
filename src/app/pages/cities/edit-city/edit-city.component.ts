@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./edit-city.component.scss'],
 })
 export class EditCityComponent implements OnInit {
+  // Properties
   public updateCityForm!: FormGroup;
   public idCity!: number;
   public cityName: string = '';
@@ -27,19 +28,19 @@ export class EditCityComponent implements OnInit {
     this.activatedRoute.params.subscribe(({ id }) => (this.idCity = id));
   }
 
+  // Init form and set the values
   ngOnInit(): void {
     this.updateCityForm = this.createCityFormulary();
 
     this.tournamentService.getCityById(this.idCity).subscribe((city) => {
       const { description } = city.data;
-
-      // This to exclude the necessary properties from the response
-
+      // Set the values
       this.updateCityForm.setValue({ description });
       this.cityName = description;
     });
   }
 
+  // Formulary
   createCityFormulary(): FormGroup {
     return this._fb.group({
       description: ['', Validators.required],
@@ -50,6 +51,7 @@ export class EditCityComponent implements OnInit {
     return this.updateCityForm.value;
   }
 
+  // Update the city
   updateCity(): void {
     this.tournamentService
       .updateCity(this.idCity, this.updateCityForm.value)
@@ -65,6 +67,7 @@ export class EditCityComponent implements OnInit {
       );
   }
 
+  // Delete the city
   deleteCity(): void {
     this.tournamentService.deleteCity(this.idCity).subscribe(() => {
       this._snackBar.open('City deleted successfully');
@@ -72,6 +75,7 @@ export class EditCityComponent implements OnInit {
     });
   }
 
+  // Cancel the update
   onBack(): void {
     this.location.back();
   }

@@ -42,7 +42,7 @@ export class EditPlayerComponent implements OnInit {
         goals,
         played_matches,
         team,
-      } = player.data[0];
+      } = player.data;
 
       // This to exclude the necessary properties from the response
 

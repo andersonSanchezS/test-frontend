@@ -8,9 +8,13 @@ import { Observable } from 'rxjs';
 export class TournamentService {
   constructor(private http: HttpClient) {}
 
+  // Positions - LeaderBoard Endpoints
+
   getPositions(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/positions/`);
   }
+
+  // Cities - Endpoints
 
   getCities(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/cities/`);
@@ -40,6 +44,8 @@ export class TournamentService {
     );
   }
 
+  // Divisions Endpoints
+
   getDivisions(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/divisions/`);
   }
@@ -68,6 +74,8 @@ export class TournamentService {
     );
   }
 
+  // Teams Endpoints
+
   getTeams(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/teams/`);
   }
@@ -93,6 +101,8 @@ export class TournamentService {
     );
   }
 
+  // Matches Endpoints
+
   getMatches(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/matches/`);
   }
@@ -100,6 +110,8 @@ export class TournamentService {
   createMatch(body: any): Observable<any> {
     return this.http.post<any>(`http://localhost:8000/api/matches/add/`, body);
   }
+
+  // Players Endpoints
 
   getPlayers(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/players/`);

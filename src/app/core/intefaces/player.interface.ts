@@ -7,5 +7,6 @@ export interface IPlayer {
   red_cards: number;
   goals: number;
   played_matches: number;
-  team: number;
+  team?: number;
+  team_name?: string;
 }

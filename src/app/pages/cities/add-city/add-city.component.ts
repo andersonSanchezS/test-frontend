@@ -11,6 +11,7 @@ import { ICity } from '../../../core/intefaces/city.interface';
   styleUrls: ['./add-city.component.scss'],
 })
 export class AddCityComponent implements OnInit {
+  // Declare a variable to store the form
   public createCityForm!: FormGroup;
 
   constructor(
@@ -20,20 +21,24 @@ export class AddCityComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) {}
 
+  // Instance of the form
   ngOnInit(): void {
     this.createCityForm = this.createCityFormulary();
   }
 
+  // Form
   createCityFormulary(): FormGroup {
     return this._fb.group({
       description: ['', Validators.required],
     });
   }
 
+  // Get the cities values
   get formValues() {
     return this.createCityForm.value as ICity;
   }
 
+  // Create a new city
   createCity(): void {
     this.tournamentService.createCity(this.formValues).subscribe(
       (response) => {

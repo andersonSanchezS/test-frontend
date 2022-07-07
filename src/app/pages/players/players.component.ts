@@ -56,7 +56,7 @@ export class PlayersComponent implements OnInit {
     {
       columnDef: 'team',
       header: 'equipo',
-      cell: (player: IPlayer) => `${player.team}`,
+      cell: (player: IPlayer) => `${player.team_name}`,
     },
   ];
   // Angular Material Data
