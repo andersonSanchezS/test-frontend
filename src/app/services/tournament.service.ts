@@ -67,4 +67,30 @@ export class TournamentService {
       description
     );
   }
+
+  getTeams(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/teams/`);
+  }
+
+  getTeamById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/teams/${id}/`);
+  }
+
+  createTeam(body: any): Observable<any> {
+    console.log(body);
+    return this.http.post<any>(`http://localhost:8000/api/teams/add/`, body);
+  }
+
+  deleteTeam(id: number): Observable<any> {
+    return this.http.delete<any>(
+      `http://localhost:8000/api/teams/delete/${id}/`
+    );
+  }
+
+  updateTeams(id: number, body: string): Observable<any> {
+    return this.http.put<any>(
+      `http://localhost:8000/api/teams/update/${id}/`,
+      body
+    );
+  }
 }

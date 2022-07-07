@@ -1,0 +1,59 @@
+<section class="main-container">
+  <section class="header-title">
+    <h2 class="header-title__text">
+      Editando el equipo : <strong> {{ teamName }} </strong>
+    </h2>
+
+    <button (click)="deleteTeam()" class="header-title__button">
+      Delete
+    </button>
+  </section>
+</section>
+
+<section class="product-container">
+  <h3 class="title-description">Division Information</h3>
+
+  <form [formGroup]="updateTeamForm" (ngSubmit)="updateTeam()">
+    <div class="product-info">
+      <div class="product-info__form">
+        <div class="product-info__form-grid">
+          <div class="user-input-wrap">
+            <input formControlName="name" type="text" required />
+            <label class="floating-placeholder"> Nombre </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="numberOfPlayers" type="text" required />
+            <label class="floating-placeholder"> # de jugadores </label>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Ciudad</mat-label>
+            <mat-select  formControlName="city">
+              <mat-option *ngFor="let city of cities" [value]="city.id">
+                {{city.description}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Division</mat-label>
+            <mat-select formControlName="division">
+              <mat-option *ngFor="let division of divisions" [value]="division.id">
+                {{division.description}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="product-buttons">
+      <button type="submit" class="product-buttons__btn btn-save">
+        save
+      </button>
+      <button type="button" (click)="onBack()" class="product-buttons__btn">
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>

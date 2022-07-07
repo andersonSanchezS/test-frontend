@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -26,6 +27,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatButtonModule,
     MatSnackBarModule,
     MatAutocompleteModule,
+    MatSelectModule,
   ],
   exports: [
     MatInputModule,
@@ -38,6 +40,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatButtonModule,
     MatSnackBarModule,
     MatAutocompleteModule,
+    MatSelectModule,
   ],
 })
 export class MaterialModule {}

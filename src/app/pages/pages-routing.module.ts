@@ -8,6 +8,7 @@ import { EditDivisionComponent } from './divisions/edit-division/edit-division.c
 import { MatchesComponent } from './matches/matches.component';
 import { PlayersComponent } from './players/players.component';
 import { PositionsComponent } from './positions/positions.component';
+import { EditTeamComponent } from './teams/edit-team/edit-team.component';
 import { TeamsComponent } from './teams/teams.component';
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'teams',
         component: TeamsComponent,
+      },
+      {
+        path: 'teams/edit/:id',
+        component: EditTeamComponent,
       },
       {
         path: 'matches',

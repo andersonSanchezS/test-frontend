@@ -15,6 +15,8 @@ import { AddCityComponent } from './cities/add-city/add-city.component';
 import { EditCityComponent } from './cities/edit-city/edit-city.component';
 import { EditDivisionComponent } from './divisions/edit-division/edit-division.component';
 import { AddDivisionComponent } from './divisions/add-division/add-division.component';
+import { AddTeamComponent } from './teams/add-team/add-team.component';
+import { EditTeamComponent } from './teams/edit-team/edit-team.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
     EditCityComponent,
     EditDivisionComponent,
     AddDivisionComponent,
+    AddTeamComponent,
+    EditTeamComponent,
   ],
   imports: [
     CommonModule,
