@@ -32,7 +32,6 @@ export class EditCityComponent implements OnInit {
 
     this.tournamentService.getCityById(this.idCity).subscribe((city) => {
       const { description } = city.data;
-      console.log(description);
 
       // This to exclude the necessary properties from the response
 

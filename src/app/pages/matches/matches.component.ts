@@ -56,7 +56,6 @@ export class MatchesComponent implements OnInit {
   getMatches(): void {
     this.tournamentService.getMatches().subscribe((matches) => {
       this.dataSource = matches.data;
-      console.log(this.dataSource);
     });
   }
 

@@ -1,0 +1,75 @@
+<section class="main-container">
+  <section class="header-title">
+    <h2 class="header-title__text">
+      Editando el jugador : <strong> {{ playerName }} </strong>
+    </h2>
+
+    <button (click)="deletePlayer()" class="header-title__button">
+      Delete
+    </button>
+  </section>
+</section>
+
+<section class="product-container">
+  <h3 class="title-description">Player Information</h3>
+
+  <form [formGroup]="updatePlayerForm" (ngSubmit)="updatePlayer()">
+    <div class="product-info">
+      <div class="product-info__form">
+        <div class="product-info__form-grid">
+          <div class="user-input-wrap">
+            <input formControlName="name" type="text" required />
+            <label class="floating-placeholder"> nombre </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="age" type="number" required />
+            <label class="floating-placeholder"> edad </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="salary" type="number" required />
+            <label class="floating-placeholder"> salario </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="yellow_cards" type="number" required />
+            <label class="floating-placeholder"> Tarjetas amarillas </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="red_cards" type="number" required />
+            <label class="floating-placeholder"> Tarjetas rojas </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="goals" type="number" required />
+            <label class="floating-placeholder"> goles </label>
+          </div>
+
+          <div class="user-input-wrap">
+            <input formControlName="played_matches" type="number" required />
+            <label class="floating-placeholder"> partidos jugados </label>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>equipo</mat-label>
+            <mat-select  formControlName="team">
+              <mat-option *ngFor="let team of teams" [value]="team.id">
+                {{team.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="product-buttons">
+      <button type="submit" class="product-buttons__btn btn-save">
+        save
+      </button>
+      <button type="button" (click)="onBack()" class="product-buttons__btn">
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>

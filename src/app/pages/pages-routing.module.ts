@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DivisionsComponent } from './divisions/divisions.component';
 import { EditDivisionComponent } from './divisions/edit-division/edit-division.component';
 import { MatchesComponent } from './matches/matches.component';
+import { EditPlayerComponent } from './players/edit-player/edit-player.component';
 import { PlayersComponent } from './players/players.component';
 import { PositionsComponent } from './positions/positions.component';
 import { EditTeamComponent } from './teams/edit-team/edit-team.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'players',
         component: PlayersComponent,
+      },
+      {
+        path: 'players/edit/:id',
+        component: EditPlayerComponent,
       },
       {
         path: 'teams',

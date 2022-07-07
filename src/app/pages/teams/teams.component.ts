@@ -54,8 +54,6 @@ export class TeamsComponent implements OnInit {
 
   getTeams(): void {
     this.tournamentService.getTeams().subscribe((teams) => {
-      console.log(teams.data);
-
       this.dataSource = teams.data;
     });
   }

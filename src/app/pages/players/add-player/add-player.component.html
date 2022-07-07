@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>
+  <span> Add a new Player </span>
+</h2>
+
+<form [formGroup]="createPlayerForm">
+  <mat-dialog-content>
+    <div class="input-box">
+      <h3 class="input-box__title">Player Information</h3>
+
+      <div class="user-input-wrap">
+        <input formControlName="name" type="text" required />
+        <label class="floating-placeholder"> nombre </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="age" type="number" required />
+        <label class="floating-placeholder"> edad </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="salary" type="number" required />
+        <label class="floating-placeholder"> salario </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="yellow_cards" type="number" required />
+        <label class="floating-placeholder"> Tarjetas amarillas </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="red_cards" type="number" required />
+        <label class="floating-placeholder"> Tarjetas rojas </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="goals" type="number" required />
+        <label class="floating-placeholder"> goles </label>
+      </div>
+
+      <div class="user-input-wrap">
+        <input formControlName="played_matches" type="number" required />
+        <label class="floating-placeholder"> partidos jugados </label>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>equipo</mat-label>
+        <mat-select  formControlName="team">
+          <mat-option *ngFor="let team of teams" [value]="team.id">
+            {{team.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cerrar</button>
+    <button mat-raised-button (click)="createPlayer()" color="primary">
+      Guardar
+    </button>
+  </mat-dialog-actions>
+</form>

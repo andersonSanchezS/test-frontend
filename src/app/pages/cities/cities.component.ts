@@ -44,9 +44,7 @@ export class CitiesComponent implements OnInit {
 
   getCities(): void {
     this.tournamentService.getCities().subscribe((city) => {
-      console.log(city);
       this.dataSource = city.data;
-      console.log(this.dataSource);
     });
   }
 

@@ -77,7 +77,6 @@ export class TournamentService {
   }
 
   createTeam(body: any): Observable<any> {
-    console.log(body);
     return this.http.post<any>(`http://localhost:8000/api/teams/add/`, body);
   }
 
@@ -100,5 +99,30 @@ export class TournamentService {
 
   createMatch(body: any): Observable<any> {
     return this.http.post<any>(`http://localhost:8000/api/matches/add/`, body);
+  }
+
+  getPlayers(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/players/`);
+  }
+
+  getPlayerById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8000/api/players/${id}/`);
+  }
+
+  createPlayer(body: any): Observable<any> {
+    return this.http.post<any>(`http://localhost:8000/api/players/add/`, body);
+  }
+
+  deletePlayer(id: number): Observable<any> {
+    return this.http.delete<any>(
+      `http://localhost:8000/api/players/delete/${id}/`
+    );
+  }
+
+  updatePlayer(id: number, body: string): Observable<any> {
+    return this.http.put<any>(
+      `http://localhost:8000/api/players/update/${id}/`,
+      body
+    );
   }
 }

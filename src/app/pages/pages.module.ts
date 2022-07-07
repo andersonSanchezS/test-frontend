@@ -18,6 +18,8 @@ import { AddDivisionComponent } from './divisions/add-division/add-division.comp
 import { AddTeamComponent } from './teams/add-team/add-team.component';
 import { EditTeamComponent } from './teams/edit-team/edit-team.component';
 import { AddMatchComponent } from './matches/add-match/add-match.component';
+import { AddPlayerComponent } from './players/add-player/add-player.component';
+import { EditPlayerComponent } from './players/edit-player/edit-player.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { AddMatchComponent } from './matches/add-match/add-match.component';
     AddTeamComponent,
     EditTeamComponent,
     AddMatchComponent,
+    AddPlayerComponent,
+    EditPlayerComponent,
   ],
   imports: [
     CommonModule,

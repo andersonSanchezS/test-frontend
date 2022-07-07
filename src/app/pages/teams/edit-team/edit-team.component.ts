@@ -36,10 +36,6 @@ export class EditTeamComponent implements OnInit {
 
     this.tournamentService.getTeamById(this.idTeam).subscribe((data) => {
       const { name, numberOfPlayers, city, division } = data.data;
-      console.log(city, division);
-      console.log(this.cities);
-      console.log(this.divisions);
-
       this.updateTeamForm.setValue({
         name,
         numberOfPlayers,
